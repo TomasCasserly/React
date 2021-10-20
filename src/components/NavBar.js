@@ -1,10 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
 
 function NavBar() {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
+                <Navbar.Brand href="#home">LOGO</Navbar.Brand>
                 <Navbar.Brand href="#home">Lotus Argentina</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
