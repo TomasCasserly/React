@@ -1,4 +1,32 @@
-.cart{
-    height: 100px;
+body{
+    margin: 1%;
+}
+
+.logo{
+    height: 75px;
     width: auto;
+}
+
+.contador{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10%;
+}
+
+.cont{
+    font-size: 20px;
+}
+
+button{
+
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.agreg{
+    width: 13%;
+    height: auto;
 }

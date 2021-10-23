@@ -1,10 +1,11 @@
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
+import CartWidget from './CartWidget';
 
 function NavBar() {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">LOGO</Navbar.Brand>
+            <img className="logo" src="https://logowik.com/content/uploads/images/lotus-cars4304.jpg" alt="Logo" />
                 <Navbar.Brand href="#home">Lotus Argentina</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -21,6 +22,7 @@ function NavBar() {
                     </Nav>
                 </Navbar.Collapse>
             </Container>
+            <CartWidget/>
         </Navbar>
 
 

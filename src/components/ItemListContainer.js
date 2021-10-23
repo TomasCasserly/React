@@ -1,16 +1,12 @@
 import React from 'react'
+import { ItemCount } from './ItemCount'
 
 const ItemListContainer = ({nombre, apellido, edad}) => {
-
-    const boton = () => {
-    console.log("Listo capo")
-
-}
 
     return (
         <>
             <p>Bienvenido {nombre} {apellido} de {edad} años.</p>
-            <button onClick={boton}>Soy un botón</button>
+            <ItemCount/>
         </>
     )
 }
