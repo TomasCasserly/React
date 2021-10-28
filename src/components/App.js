@@ -9,7 +9,7 @@ function App() {
     return(
         <>
         <Header/>
-        <ItemListContainer nombre="Tom" apellido="Casserly" edad= {33}/>
+        <ItemListContainer/>
         <Footer/>
         </>
     )

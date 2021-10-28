@@ -1,23 +1,15 @@
 const ItemList = () => {
 
-    const promesa = new Promise((res, rej) => {
-        setTimeout(() => {
-            res()
-        }, 2000)
-
-    })
-
-
-        promesa.then(()=>{console.log("Good!")})
-        promesa.catch(()=>{console.log("Try again")})
-        
-
+    // Solo el map
     
-    
+
     return (
-        <div>
-            
-        </div>
+<div>
+    <h2>El auto</h2>
+    {/* {map((e)=>{
+        return <p key={e.id}>{e.marca} {e.modelo}</p>
+    })} */}
+</div>
     )
 }
 
