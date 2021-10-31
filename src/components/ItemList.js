@@ -1,14 +1,19 @@
-const ItemList = () => {
+import { Item } from "./Item";
+
+const ItemList = (props) => {
 
     // Solo el map
+    const {auto} = props;
     
 
     return (
 <div>
     <h2>El auto</h2>
-    {/* {map((e)=>{
-        return <p key={e.id}>{e.marca} {e.modelo}</p>
-    })} */}
+    {auto.map((carro)=>(
+        // <Item key={carro.id} carro={carro}/>
+        <Item key={carro.id} carro={carro}/>
+        
+        ))}
 </div>
     )
 }

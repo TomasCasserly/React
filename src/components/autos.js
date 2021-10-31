@@ -1,23 +1,24 @@
-[
+const autos = {
+    data: [
     {
         "id": 1,
         "marca": "Lotus",
         "modelo": "Elise",
-        "precio": 250000,
+        "precio": "100000",
         "img": "http://placehold.it/100x100"
     },
     {
         "id": 2,
         "marca": "Lotus",
         "modelo": "Exige",
-        "precio": 250000,
+        "precio": "200000",
         "img": "http://placehold.it/100x100"
     },
     {
         "id": 3,
         "marca": "Lotus",
         "modelo": "Emira",
-        "precio": 250000,
+        "precio": "300000",
         "img": "http://placehold.it/100x100"
     },
 
@@ -29,3 +30,7 @@
         "img": "http://placehold.it/100x100"
     }
 ]
+
+}
+
+export default autos;

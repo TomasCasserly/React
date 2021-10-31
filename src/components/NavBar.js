@@ -6,7 +6,7 @@ function NavBar() {
         <Navbar bg="light" expand="lg">
             <Container>
             <img className="logo" src="https://logowik.com/content/uploads/images/lotus-cars4304.jpg" alt="Logo" />
-                <Navbar.Brand href="#home">Lotus Argentina</Navbar.Brand>
+                <Navbar.Brand href="/">Lotus Argentina</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">

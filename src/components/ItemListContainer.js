@@ -1,35 +1,34 @@
 import React, {useEffect, useState} from 'react'
+// import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
+import autos from './autos';
 
 const ItemListContainer = () => {
     // Lógica, estado, efecto,simulacro de promesa, timeout.
 
-    const [autos, setAutos] = useState ([]);
+    // const {data} = autos;
+
+    // const resultado = useParams()
+    // console.log(resultado)
+
+    const [auto, setAuto] = useState ([]);
 
     useEffect(() => {
     setTimeout(() => {
-    setAutos([
-        {"id": 1,
-        "marca": "Lotus",
-        "modelo": "Elise",
-        "precio": 250000,
-        "img": "http://placehold.it/100x100"
+    setAuto([ {
+        id: 1,
+        marca: "Lotus",
+        modelo: "Elise",
+        precio: "100000",
+        img: "https://2.bp.blogspot.com/-Y5oJsIA02EQ/Wm-o5Uwd9lI/AAAAAAAAWls/ANSA-6zBOLcnCUmBQUFWCIsm5HUNqZVtwCLcBGAs/s1600/Lotus-Elise-Cup-250.jpg"
     },
     {
-        "id": 2,
-        "marca": "Lotus",
-        "modelo": "Exige",
-        "precio": 250000,
-        "img": "http://placehold.it/100x100"
-    },
-    {
-        "id": 3,
-        "marca": "Lotus",
-        "modelo": "Emira",
-        "precio": 250000,
-        "img": "http://placehold.it/100x100"
-    }
-]);
+        id: 2,
+        marca: "Lotus",
+        modelo: "Exige",
+        precio: "200000",
+        img: "https://www.autobild.es/sites/autobild.es/public/styles/main_element/public/dc/fotos/Lotus_Exige_Cup_Final_Edition_03_0.jpeg?itok=ww02_Et7"
+    }]);
     }, 2000);
     }, []);
 
@@ -37,7 +36,7 @@ const ItemListContainer = () => {
     const promesa = () =>
     new Promise((res, rej) => {
         setTimeout(() => {
-            res(autos)
+            res()
         }, 2000)
 
     })
@@ -47,13 +46,13 @@ const ItemListContainer = () => {
         .catch(()=>{console.log("Oops")})
         
 
-        if (autos.length === 0) {
-            return <p>Loading</p>;
+        if (auto.length === 0) {
+            return <p>Aguarde un momento, por favor</p>;
         } else {
 
     return (
         <>
-              <ItemList/>
+              <ItemList auto={auto}/>
         </>
     )
 }
