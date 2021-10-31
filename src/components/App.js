@@ -5,6 +5,7 @@ import './style.css';
 import Header from "./Header";
 import ItemListContainer from "./ItemListContainer";
 import Footer from "./Footer";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 function App() {
     return(
@@ -12,7 +13,8 @@ function App() {
         <Header/>
         <Route path="/" component={ItemListContainer} exact/>
         {/* <Route path="/categoria/:id" component={ItemListContainer}/> */}
-        <ItemListContainer/>
+        {/* <ItemListContainer/> */}
+        <ItemDetailContainer/>
         <Footer/>
         </BrowserRouter>
     )
