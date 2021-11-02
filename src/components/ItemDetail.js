@@ -1,10 +1,10 @@
 const ItemDetail = (props) => {
 
-const {data} = props;
+const {modelo} = props;
 
     return (
         <div>
-            <p>{data.description}</p>
+            <p>{modelo.description}</p>
             
         </div>
     )
