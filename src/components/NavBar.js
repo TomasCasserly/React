@@ -1,7 +1,14 @@
 import { Nav, Navbar, Container, NavDropdown } from 'react-bootstrap';
 import CartWidget from './CartWidget';
+import { useContext } from 'react';
+import { contexto } from './CartContext';
+
 
 function NavBar() {
+
+    const resultado = useContext(contexto)
+    console.log(resultado)
+    
     return (
         <Navbar bg="light" expand="lg">
             <Container>

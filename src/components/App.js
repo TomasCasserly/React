@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import './style.css';
 import Header from "./Header";
 import ItemListContainer from "./ItemListContainer";
@@ -11,10 +11,11 @@ function App() {
     return(
         <BrowserRouter>
         <Header/>
-        <Route path="/" component={ItemListContainer} exact/>
-        {/* <Route path="/categoria/:id" component={ItemListContainer}/> */}
-        {/* <ItemListContainer/> */}
-        <ItemDetailContainer/>
+        <Switch>
+        <Route exact path="/" component={ItemListContainer}/>
+        <Route path="/category/:id" component={ItemListContainer}/>
+        <Route path="/item/:id" component={ItemDetailContainer}/>
+        </Switch>
         <Footer/>
         </BrowserRouter>
     )

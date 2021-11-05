@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 // import autos from './autos';
 
@@ -8,8 +8,8 @@ const ItemListContainer = () => {
 
     // const {data} = autos;
 
-    // const resultado = useParams()
-    // console.log(resultado)
+    const resultado = useParams()
+    console.log(resultado)
 
     const [auto, setAuto] = useState ([]);
 
