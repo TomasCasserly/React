@@ -13,8 +13,8 @@ function App() {
         <Header/>
         <Switch>
         <Route exact path="/" component={ItemListContainer}/>
-        <Route path="/category/:id" component={ItemListContainer}/>
-        <Route path="/item/:id" component={ItemDetailContainer}/>
+        <Route exact path="/category" component={ItemListContainer}/>
+        <Route path="/modelo/:id" component={ItemDetailContainer}/>
         </Switch>
         <Footer/>
         </BrowserRouter>

@@ -1,15 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom';
 import ItemList from './ItemList';
 // import autos from './autos';
 
 const ItemListContainer = () => {
     // Lógica, estado, efecto,simulacro de promesa, timeout.
-
-    // const {data} = autos;
-
-    const resultado = useParams()
-    console.log(resultado)
 
     const [auto, setAuto] = useState ([]);
 

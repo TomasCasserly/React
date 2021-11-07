@@ -1,38 +1,66 @@
 import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
+import ItemDetail from './ItemDetail'
+import { useParams } from 'react-router-dom';
 
 function ItemDetailContainer(){
 
-    const [modelo, setDetails] = useState([])
-    useEffect(() => {
-        fetchDetails();
-    })
+  const resultado = useParams()
+  console.log(resultado)
 
-    const fetchDetails=async()=>{
-        const response=await Axios('https://618023028bfae60017adf9c8.mockapi.io/lotuscars');
-        setDetails(response.data)
-    }
+const [modelo, setModelo] = useState([]);
+useEffect(()=>{
+  obtenerDatos()
+},[])
 
+
+const obtenerDatos = async () => {
+  const data = await fetch(`https://618023028bfae60017adf9c8.mockapi.io/lotuscars/`)
+  const modo = await data.json()
+  setModelo(modo)
+}
 
     return (
         <div>
-          {
-            modelo && modelo.map(modelo=>{
-              return(
-                <div key={modelo.id} style={{alignItems:'center',margin:'20px 60px'}}>
-                <h4>{modelo.modelo}</h4>
-                <img alt="pHotos" src={modelo.img}></img>
-              </div>
-              )
-    
-            })
-          }
+          <h1>Autos</h1>
+          {modelo.map((e)=>(
+            <ItemDetail key={e.id} e={e}/>
+        
+        ))}
+
         </div>
     )
 }
 
 export default ItemDetailContainer;
 
+
+// const {id} = useParams()
+// console.log(id)
+
+//     const [modelo, setDetails] = useState([])
+//     useEffect(() => {
+//         fetchDetails();
+//     })
+
+//     const fetchDetails=async()=>{
+//         const response=await Axios('https://618023028bfae60017adf9c8.mockapi.io/lotuscars');
+//         setDetails(response.data)
+//     }
+
+// {
+//   modelo && modelo.map(modelo=>{
+//     return(
+//       <div key={modelo.id} style={{alignItems:'center',margin:'20px 60px'}}>
+//       <h4>{modelo.modelo}</h4>
+//       <img alt="photos" src={modelo.img}></img>
+//     </div>
+//     )
+
+//   })
+// }
+
+
+///////////////////////////////////////////////////////////////
 // const {data} = autos;
 
 // const [coche, setCoche] = useState([]);
