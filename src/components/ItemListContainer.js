@@ -33,17 +33,17 @@ const ItemListContainer = () => {
     }, []);
 
 
-    const promesa = () =>
-    new Promise((res, rej) => {
-        setTimeout(() => {
-            res()
-        }, 2000)
+    // const promesa = () =>
+    // new Promise((res, rej) => {
+    //     setTimeout(() => {
+    //         res()
+    //     }, 2000)
 
-    })
+    // })
 
-    promesa()
-        .then(()=>{console.log("Se muestran los autos")})
-        .catch(()=>{console.log("Oops")})
+    // promesa()
+    //     .then(()=>{console.log("Se muestran los autos")})
+    //     .catch(()=>{console.log("Oops")})
         
 
         if (auto.length === 0) {

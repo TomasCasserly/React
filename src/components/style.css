@@ -2,6 +2,7 @@ body{
     margin: 1%;
 }
 
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
@@ -24,10 +25,16 @@ nav {
     color: #0d47a1
   }
 
+  li {
+    list-style: none;
+    text-decoration: none;
+  }
+
 .logo{
     height: 75px;
     width: auto;
 }
+/* NAV */
 
 
 /* CONTADOR */
@@ -55,3 +62,8 @@ button{
     height: auto;
 }
 /* CONTADOR */
+
+img {
+  height: 250px;
+  width: auto;
+}
