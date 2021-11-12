@@ -1,21 +1,25 @@
 import { ItemCount } from "./ItemCount";
+import { useContext } from "react";
+import { contexto } from "./CartContext";
 
-const ItemDetail = (props) => {
+const ItemDetail = (mod) => {
+
+    const {addToCart} = useContext(contexto)
 
     const pasaContador = (totalUnidades) => {
-        console.log(totalUnidades+ " unidades agregadas al carrito")
-
+        console.log(totalUnidades+ " unidades " + modelo.modelo + " agregadas al carrito")
+        console.log(totalUnidades, modelo)
+        addToCart(totalUnidades, modelo)
     }
 
-const {e} = props;
+    const {modelo} = mod;
 
     return (
         <div>
-            <p>HOLAHOLA</p>
-            <h2>{e.marca} {e.modelo}</h2>
-            <img src={e.img} alt={e.modelo}></img>
-            <h4>${e.precio} USD</h4>
-            <p>{e.description}</p>
+            <h2>{modelo.marca} {modelo.modelo}</h2>
+            <img src={modelo.img} alt={modelo.modelo}></img>
+            <h4>${modelo.precio} USD</h4>
+            <p>{modelo.description}</p>
             <ItemCount onClick={pasaContador}/>
             
         </div>
