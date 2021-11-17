@@ -11,12 +11,27 @@ const ContextComponent = ({children}) => {
     const addToCart = (totalUnidades, modelo) => {
         console.log("Al context")
         console.log(totalUnidades, modelo)
+        const newCar = {totalUnidades, modelo}
+        const copia = [...cart]
+        copia.push(newCar)
+        setCart(copia)
+
+    }
+
+    const vaciar = () => {
+        setCart([])
+    }
+
+    const remover = (modelo) => {
+        
 
     }
 
     const contextValue = {
         cart : cart,
-        addToCart : addToCart
+        addToCart : addToCart,
+        remover : remover,
+        vaciar : vaciar
     }
 
 

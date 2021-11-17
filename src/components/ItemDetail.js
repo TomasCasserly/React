@@ -1,29 +1,40 @@
 import { ItemCount } from "./ItemCount";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { contexto } from "./CartContext";
+import { useHistory } from "react-router-dom";
 
 const ItemDetail = (mod) => {
+  const { modelo } = mod;
 
-    const {addToCart} = useContext(contexto)
+  const { push } = useHistory();
 
-    const pasaContador = (totalUnidades) => {
-        console.log(totalUnidades+ " unidades " + modelo.modelo + " agregadas al carrito")
-        console.log(totalUnidades, modelo)
-        addToCart(totalUnidades, modelo)
-    }
+  const { addToCart } = useContext(contexto);
 
-    const {modelo} = mod;
+  const [mostrar, setMostrar] = useState(false);
 
-    return (
-        <div>
-            <h2>{modelo.marca} {modelo.modelo}</h2>
-            <img src={modelo.img} alt={modelo.modelo}></img>
-            <h4>${modelo.precio} USD</h4>
-            <p>{modelo.description}</p>
-            <ItemCount onClick={pasaContador}/>
-            
-        </div>
-    )
-}
+  const pasaContador = (totalUnidades) => {
+    console.log(totalUnidades + " unidades " + modelo.modelo + " agregadas al carrito");
+    console.log(totalUnidades, modelo);
+    addToCart(totalUnidades, modelo);
+    setMostrar(!mostrar);
+  };
 
-export default ItemDetail
+  const alCarrito = () => {
+    push("/cart");
+  };
+
+  return (
+    <div>
+      <h2>
+        {modelo.marca} {modelo.modelo}
+      </h2>
+      <img src={modelo.img} alt={modelo.modelo}></img>
+      <h4>${modelo.precio} USD</h4>
+      <p>{modelo.description}</p>
+      <ItemCount onClick={pasaContador} />
+      {mostrar && <button onClick={alCarrito}>Revisá tu garage</button>}
+    </div>
+  );
+};
+
+export default ItemDetail;

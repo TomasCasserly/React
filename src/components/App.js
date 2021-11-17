@@ -7,6 +7,7 @@ import ItemListContainer from "./ItemListContainer";
 import Footer from "./Footer";
 import ItemDetailContainer from "./ItemDetailContainer";
 import ContextComponent from "./CartContext";
+import Cart from "./Cart";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/" component={ItemListContainer} />
         <Route exact path="/category/:id" component={ItemListContainer} />
         <Route path="/modelo/:id" component={ItemDetailContainer} />
+        <Route path="/cart/" component={Cart} />
       </Switch>
       <Footer />
       </ContextComponent>
