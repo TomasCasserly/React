@@ -24,15 +24,15 @@ const ItemDetail = (mod) => {
   };
 
   return (
-    <div>
-      <h2>
-        {modelo.marca} {modelo.modelo}
-      </h2>
+    <div className="boxContainer">
+      <div className="infoBox">
+      <h2>{modelo.marca} {modelo.modelo}</h2>
       <img src={modelo.img} alt={modelo.modelo}></img>
       <h4>${modelo.precio} USD</h4>
       <p>{modelo.description}</p>
       <ItemCount onClick={pasaContador} />
       {mostrar && <button onClick={alCarrito}>Revisá tu garage</button>}
+      </div>
     </div>
   );
 };

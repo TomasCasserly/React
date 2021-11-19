@@ -24,9 +24,9 @@ export const ItemCount = ({onClick, onAdd}) => {
     return (
         <>
         <div className="contador">
-            <button onClick={add}>+</button>
+            <button className="btnCnt" onClick={res}>-</button>
             <p className="cont">{count}</p>
-            <button onClick={res}>-</button>
+            <button className="btnCnt" onClick={add}>+</button>
         </div>
         <button className="agreg" onClick={ () => onClick (count)}>Me llevo este Lotus</button>
         </>

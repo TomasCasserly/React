@@ -1,5 +1,7 @@
 body{
-    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* NAV */
@@ -50,6 +52,11 @@ nav {
     font-size: 20px;
 }
 
+.btnCnt{
+  width: 3rem;
+  height: 3rem;
+}
+
 button{
     border-radius: 5px;
 }
@@ -63,6 +70,18 @@ button{
 img {
   height: 250px;
   width: auto;
+}
+
+.boxContainer{
+  border: 2px solid #ccc;
+  padding: 10px;
+  width: 30em;
+}
+
+.infoBox{
+  width: fit-content;
+  padding: 5px;
+  margin-bottom: 1em;
 }
 
 .items{
@@ -80,3 +99,7 @@ img {
   padding: 15px;
   display: block;
 }
+
+/* FOOTER */
+.footerMain{
+  margin-top: 1rem; padding: 0.5rem; background-color: #cfd8dc; position: fixed; bottom: 0; left: 0; width: 100%; }
