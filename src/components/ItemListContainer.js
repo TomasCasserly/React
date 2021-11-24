@@ -14,6 +14,11 @@ const ItemListContainer = () => {
 
         const collection = db.collection("autos")
 
+        // const query = collection.where("idCategoria", "==", {id})
+        // const consulta = query.get()
+
+
+
         const consulta = collection.get()
 
         consulta
@@ -28,6 +33,10 @@ const ItemListContainer = () => {
             })
 
             setAuto(coches)
+        })
+
+        .catch(()=>{
+            console.log("Hubo un error")
         })
     })
     

@@ -14,7 +14,7 @@ function NavBar() {
         <li><NavLink to="/modelo/Iq5OlpB72jbADspfnSUI">Elise</NavLink></li>
         <li><NavLink to="/modelo/MgdxCbQyhY0pMN9iCRuO">Exige</NavLink></li>
         <li><NavLink to="/modelo/eYYyCTlrIydA459nC6Py">Emira</NavLink></li>
-        <li><NavLink to="/modelo/iVR4MK1JQ4dZnI1exjD8">Evora</NavLink></li>
+        <li><NavLink to="/modelo/iVR4MK1JQ4dZnI1exjD8">Evija</NavLink></li>
       </ul>
       <CartWidget/>
     </nav>
