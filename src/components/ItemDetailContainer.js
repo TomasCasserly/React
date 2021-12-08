@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
   const { id } = useParams();
-  console.log(id);
 
   const [modelo, setModelo] = useState([]);
 
@@ -18,7 +17,6 @@ function ItemDetailContainer() {
 
     promesa
       .then((documento) => {
-        console.log("Consulta exitosa");
         const data = documento.data();
         setModelo(data);
       })

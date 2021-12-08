@@ -8,7 +8,6 @@ const ItemListContainer = () => {
   const { id } = useParams();
 
   useEffect(() => {
-
     const collection = firestore.collection("autos");
 
     let promesa;
@@ -38,7 +37,7 @@ const ItemListContainer = () => {
   });
 
   return (
-    <div  className="mainDisplay">
+    <div className="mainDisplay">
       <ItemList auto={auto} />
     </div>
   );

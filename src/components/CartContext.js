@@ -1,52 +1,40 @@
 import { createContext, useState } from "react";
 
-export const contexto = createContext()
+export const contexto = createContext();
 
-const { Provider } = contexto
+const { Provider } = contexto;
 
-const ContextComponent = ({children}) => {
+const ContextComponent = ({ children }) => {
+  const [cart, setCart] = useState([]);
 
-    const [cart, setCart] = useState ([])
+  const addToCart = (totalUnidades, modelo) => {
+    const newCar = { totalUnidades, modelo };
+    const copia = [...cart];
+    copia.push(newCar);
+    setCart(copia);
+  };
 
-    const addToCart = (totalUnidades, modelo) => {
-        const newCar = {totalUnidades, modelo}
-        const copia = [...cart]
-        copia.push(newCar)
-        setCart(copia)
+  const vaciar = () => {
+    setCart([]);
+  };
 
-    }
+  const remover = (modelo) => {
+    setCart(cart.filter((auto) => auto.modelo !== modelo));
+  };
 
-    const vaciar = () => {
-        setCart([])
-    }
+  const totalCantidad = () => {
+    return cart.reduce((car, that) => car + that.totalUnidades, 0);
+  };
 
+  const contextValue = {
+    cart: cart,
+    addToCart: addToCart,
+    remover: remover,
+    vaciar: vaciar,
+    totalCantidad: totalCantidad,
+  };
 
-    const remover = (modelo) => {
-        setCart(cart.filter(auto => auto.modelo !== modelo ) )
-      }
+  return <Provider value={contextValue}>{children}</Provider>;
+};
 
-
-
-    const totalCantidad = () => {
-        return cart.reduce( (car, that) => car + that.totalUnidades, 0)
-      }
-
-    const contextValue = {
-        cart : cart,
-        addToCart : addToCart,
-        remover : remover,
-        vaciar : vaciar,
-        totalCantidad : totalCantidad
-    }
-
-
-    return (
-
-        <Provider value={contextValue}>
-            {children}
-
-        </Provider>
-    )
-}
-
-export default ContextComponent
+export default ContextComponent;

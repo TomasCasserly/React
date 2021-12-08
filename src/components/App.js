@@ -13,14 +13,14 @@ function App() {
   return (
     <BrowserRouter>
       <ContextComponent>
-      <NavBar />
-      <Switch>
-        <Route exact path="/" component={ItemListContainer} />
-        <Route exact path="/category/:id" component={ItemListContainer} />
-        <Route path="/modelo/:id" component={ItemDetailContainer} />
-        <Route path="/cart/" component={Cart} />
-      </Switch>
-      <Footer />
+        <NavBar />
+        <Switch>
+          <Route exact path="/" component={ItemListContainer} />
+          <Route exact path="/category/:id" component={ItemListContainer} />
+          <Route path="/modelo/:id" component={ItemDetailContainer} />
+          <Route path="/cart/" component={Cart} />
+        </Switch>
+        <Footer />
       </ContextComponent>
     </BrowserRouter>
   );
