@@ -9,8 +9,6 @@ const ContextComponent = ({children}) => {
     const [cart, setCart] = useState ([])
 
     const addToCart = (totalUnidades, modelo) => {
-        console.log("Al context")
-        console.log(totalUnidades, modelo)
         const newCar = {totalUnidades, modelo}
         const copia = [...cart]
         copia.push(newCar)
@@ -22,16 +20,23 @@ const ContextComponent = ({children}) => {
         setCart([])
     }
 
-    const remover = (modelo) => {
-        
 
-    }
+    const remover = (modelo) => {
+        setCart(cart.filter(auto => auto.modelo !== modelo ) )
+      }
+
+
+
+    const totalCantidad = () => {
+        return cart.reduce( (car, that) => car + that.totalUnidades, 0)
+      }
 
     const contextValue = {
         cart : cart,
         addToCart : addToCart,
         remover : remover,
-        vaciar : vaciar
+        vaciar : vaciar,
+        totalCantidad : totalCantidad
     }
 
 

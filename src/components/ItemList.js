@@ -4,7 +4,7 @@ const ItemList = ({auto}) => {
 
     // Solo el map
     return (
-<div>
+<div  className="mainDisplay">
     {auto.map((carro)=>(
         <Item key={carro.id} carro={carro}/>
         

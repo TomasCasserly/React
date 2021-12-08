@@ -9,49 +9,29 @@ function ItemDetailContainer() {
 
   const [modelo, setModelo] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
+    const collection = firestore.collection("autos");
 
-    const db = firestore
+    const query = collection.doc(id);
 
-    const collection = db.collection("autos")
+    const promesa = query.get();
 
-    const query = collection.doc(id)
-
-    const promesa = query.get()
-    
     promesa
-        .then((documento)=>{
-            console.log("Consulta exitosa")
-            const data = documento.data()
-            setModelo(data)
-        })
-        .catch(()=>{
-            console.log("Hubo un error")
-        })
-
-
-}, [id])
+      .then((documento) => {
+        console.log("Consulta exitosa");
+        const data = documento.data();
+        setModelo(data);
+      })
+      .catch(() => {
+        console.log("Hubo un error");
+      });
+  }, [id]);
 
   return (
-    <div>
+    <div className="detailContainer">
       <ItemDetail key={modelo.id} modelo={modelo} />
-
     </div>
   );
 }
 
 export default ItemDetailContainer;
-
-
-
-// useEffect(() => {
-//   setTimeout(() => {
-//     const fetchModelo = async () => {
-//       const response = await Axios(`https://618023028bfae60017adf9c8.mockapi.io/lotuscars/`);
-//       setModelo(response.data);
-//     };
-//     fetchModelo();
-//   }, 2000);
-// }, []);
-
-// // const filtro = modelo.filter(modelo=> modelo.id === id)

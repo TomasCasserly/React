@@ -13,8 +13,6 @@ const ItemDetail = (mod) => {
   const [mostrar, setMostrar] = useState(false);
 
   const pasaContador = (totalUnidades) => {
-    console.log(totalUnidades + " unidades " + modelo.modelo + " agregadas al carrito");
-    console.log(totalUnidades, modelo);
     addToCart(totalUnidades, modelo);
     setMostrar(!mostrar);
   };
