@@ -22,13 +22,13 @@ El sitio "Lotus Cars" está enfocado en informar a potenciales clientes sobre lo
 
 ![inicio](https://github.com/TomasCasserly/React/blob/master/src/components/inicio.PNG)
 
-### Detalle del vehículo
+## Detalle del vehículo
 
 Una vez en el detalle del vehículo, se podrá ver el nombre del mismo, su descripción y precio. En la misma página se podrá elegir cuántas unidades de ese vehículo se desean agregar al carrito (aquí llamado "garage"). Una vez que se agregan vehículos al garage, se habilitará un botón que llevará al cliente al carrito para ver qué ha seleccionado hasta el momento. La persona puede tanto hacer click aquí, o seguir navegando el sitio para ver y/o agregar otros vehículos a su garage.
 
 ![detalle](https://github.com/TomasCasserly/React/blob/master/src/components/detalle.PNG)
 
-### Garage
+## Garage
 
 Uno puede acceder a su garage tanto desde el detalle del vehículo, como desde cualquier parte del sitio, donde encontrará un ícono de carrito el cual lo llevará a su garage en cualquier momento. Si no ha seleccionado vehículos, se mostrará un mensaje que indique esto, y lo invitará a volver al menú principal para que pueda ver los vehículos disponibles.
 
@@ -36,7 +36,7 @@ Si, sin embargo, ha seleccionado uno o más vehículos para comprar, aquí los p
 
 ![garage](https://github.com/TomasCasserly/React/blob/master/src/components/garageSalida.PNG)
 
-### Checkout
+## Checkout
 
 Una vez que está satisfecho con su elección, debe hacer click en el botón "Finalizar Compra", mostrado debajo de su lista de vehículos. Al hacer esto se le habilitará un formulario para que ingrese sus datos y se le mostrará su número de orden de compra.
 
